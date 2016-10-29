@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import nutritionReducer from './nutritionReducer'
+import categoryReducer from './categoryReducer'
 
 const reducers = combineReducers({
-  nutritionReducer
+  categoryReducer
 })
 
 export default reducers

@@ -1,5 +1,7 @@
-export default {
-  FETCH_NUTRITION: 'FETCH_NUTRITION',
-  REQUEST_NUTRITION: 'REQUEST_NUTRITION',
-  RECEIVE_NUTRITIONS: 'RECEIVE_NUTRITIONS'
-};
+import keymirror from 'keymirror';
+
+export default keymirror({
+  FETCH_CATEGORIES: null,
+  RECEIVE_CATEGORIES: null,
+  REQUEST_CATEGORIES: null
+});

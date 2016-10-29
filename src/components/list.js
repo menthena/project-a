@@ -6,18 +6,26 @@ export default class List extends React.Component {
     super(props);
   }
 
+  renderCategories() {
+    const { categories } = this.props;
+    if (categories) {
+      return categories.map(item => {
+          return <li key={item.categoryId}><Link to={`/${item.categoryId}`}>{item.categoryName}</Link></li>;
+        });
+    }
+  }
+
   render() {
-    const { nutritions } = this.props;
-    var items;
-    items = nutritions.map(item => {
-        return <li key={item._id}><Link to={`/${item._id}`}>{item._id}</Link></li>;
-      });
-    return (<ul>
-              { items }
-            </ul>);
+    const { isFetching } = this.props;
+
+    return (
+      <ul>
+        { this.renderCategories() }
+      </ul>
+    );
   }
 }
 
 List.propTypes = {
-  nutritions: React.PropTypes.array.isRequired
+  categories: React.PropTypes.array.isRequired
 };

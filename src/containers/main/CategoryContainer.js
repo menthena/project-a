@@ -3,13 +3,16 @@ import {connect} from 'react-redux';
 import styles from './style.css';
 import Query from '../../components/query';
 import List from '../../components/list';
-import {fetchNutrition} from '../../actions/nutritionActions';
+import {fetchCategories} from '../../actions/categoryActions';
 
-class SearchContainer extends React.Component {
+class CategoryContainer extends React.Component {
+  componentDidMount() {
+    this.props.fetchCategories();
+  }
+
   render() {
     return (
       <div className={styles.content}>
-        <Query title='Title' {...this.props}></Query>
         <List {...this.props}></List>
       </div>
     );
@@ -18,14 +21,15 @@ class SearchContainer extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    nutritions: state.nutritionReducer.nutritions
+    categories: state.categoryReducer.categories,
+    isFetching: state.categoryReducer.isFetching
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleOnChange: () => dispatch(fetchNutrition())
+    fetchCategories: () => dispatch(fetchCategories())
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryContainer);
