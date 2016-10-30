@@ -8,5 +8,6 @@ import MainContainer from './containers/main/MainContainer';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={MainContainer} />
+    <Route path="/:categoryId" component={MainContainer} />
   </Route>
 );

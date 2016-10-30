@@ -3,16 +3,16 @@ import { shallow, mount } from 'enzyme';
 import React from 'react';
 import 'jsdom-global/register';
 
-import List from './list';
+import GenericList from './GenericList';
 
-test('When List have no categories passed, it should not fail', t => {
-  const wrapper = shallow(<List categories={[]} />);
+test('When GenericList have no items passed, it should not fail', t => {
+  const wrapper = shallow(<GenericList items={[]} />);
 
   t.is(wrapper.find('ul').length, 1);
 });
 
-test('When List have categories, it should render them', t => {
-  const categories = [{
+test('When GenericList have items, it should render them', t => {
+  const items = [{
     categoryId: 1,
     categoryName: 'Category 1'
   },
@@ -24,16 +24,16 @@ test('When List have categories, it should render them', t => {
     categoryId: 3,
     categoryName: 'Category 3'
   }];
-  const wrapper = shallow(<List categories={categories} />);
+  const wrapper = shallow(<GenericList items={items} />);
 
   t.is(wrapper.find('li').length, 3);
 });
 
-test('Lists should also contains links under them', t => {
-  const categories = [{
+test('GenericLists should also contains links under them', t => {
+  const items = [{
     categoryId: 1,
     categoryName: 'Category 1'
   }];
-  const wrapper = mount(<List categories={categories} />);
+  const wrapper = mount(<GenericList items={items} />);
   t.is(wrapper.find('li').find('a').length, 1);
 });
