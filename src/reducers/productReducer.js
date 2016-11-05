@@ -18,6 +18,11 @@ const productReducer = (state = initialState, action) => {
         isFetching: false,
         products: action.products
       };
+    case actions.SELECT_PRODUCT:
+      return {
+        ...state,
+        selectedProduct: action.product
+      };
     default:
       return state;
   }

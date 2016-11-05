@@ -2,6 +2,7 @@ import actions from '../actions/index';
 
 let initialState = {
   categories: [],
+  selectedCategory: null,
   isFetching: false
 };
 
@@ -18,6 +19,11 @@ const categoryReducer = (state = initialState, action) => {
         isFetching: false,
         categories: action.categories
       };
+    case actions.SELECT_CATEGORY:
+      return {
+        ...state,
+        selectedCategory: action.category
+      }
     default:
       return state;
   }

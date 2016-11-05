@@ -1,18 +1,20 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-const ListItem = ({ handleOnClick, itemName, isSelected }) => {
+const ProductListItem = ({ handleOnClick, itemName, price, isSelected }) => {
   const styles = {fontWeight: (isSelected) ? 'bold': 'normal'};
   return (
     <Link onClick={ handleOnClick } style={styles}>
       {itemName}
+      <span>{price}</span>
     </Link>
   );
 };
 
-ListItem.propTypes = {
+ProductListItem.propTypes = {
   handleOnClick: React.PropTypes.func.isRequired,
-  itemName: React.PropTypes.string.isRequired
+  itemName: React.PropTypes.string.isRequired,
+  price: React.PropTypes.string.isRequired
 };
 
-export default ListItem;
+export default ProductListItem;
