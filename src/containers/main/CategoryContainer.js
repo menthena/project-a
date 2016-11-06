@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import styles from './categoryContainer.css';
-import Query from '../../components/query';
+import Filter from '../../components/filter';
 import {ProductList, CategoryList} from '../../components/genericList';
 import {selectCategory, fetchCategories} from '../../actions/categoryActions';
-import {selectProduct} from '../../actions/productActions';
+import {selectProduct, filterProducts} from '../../actions/productActions';
 
 class CategoryContainer extends React.Component {
   componentDidMount() {
@@ -19,6 +19,13 @@ class CategoryContainer extends React.Component {
           itemName={'categoryName'}
           dispatchEvent={this.props.selectCategory}
           selectedItem={this.props.selectedCategory}
+        />
+        <Filter
+          labelText="Filter:"
+          placeholder="Filter products..."
+          handleOnChange={(query) => {
+            this.props.filterProducts(this.props.selectedCategory.categoryId, query);
+          }}
         />
         <ProductList
           items={this.props.products}
@@ -46,6 +53,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchCategories: () => dispatch(fetchCategories()),
     selectCategory: (item) => dispatch(selectCategory(item)),
     selectProduct: (item) => dispatch(selectProduct(item)),
+    filterProducts: (query) => dispatch(filterProducts(query)),
     fetchProductsByCategoryId: (item) => dispatch(fetchProductsByCategoryId(item))
   };
 };

@@ -31,14 +31,12 @@ test('Should create an action to receive a category', () => {
 });
 
 test('Should not dispatch any actions while there is a fetch in progress', () => {
-  const store = mockStore({ categories: [], isFetching: true });
+  const store = mockStore({ categoryReducer: { categories: [], isFetching: true } });
   store.dispatch(categoryActions.fetchCategories())
-    .then(() => {
-      expect(store.getActions().length).toBe(0);
-    });
+  expect(store.getActions().length).toBe(0);
 });
 
-test('Should make an API call on fetchCategories', () => {
+test('Should make an API call on fetchCategories', (done) => {
   let query;
   nock.cleanAll();
   nock('http://localhost:3000')
@@ -50,10 +48,11 @@ test('Should make an API call on fetchCategories', () => {
       { type: actions.RECEIVE_CATEGORIES, categories: [{categoryId: 1}], query }
     ];
 
-  const store = mockStore({ categories: [] })
+  const store = mockStore({ categoryReducer: { categories: [], isFetching: false } })
   return store.dispatch(categoryActions.fetchCategories())
     .then(() => {
       expect(store.getActions()).toEqual(expectedActions)
+      done();
     })
 });
 

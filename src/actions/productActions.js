@@ -25,6 +25,14 @@ export const shouldFetch = (state) => {
   return true;
 }
 
+export const filterProducts = (categoryId, query) => {
+  return {
+    type: actions.FILTER_PRODUCTS,
+    categoryId,
+    query
+  };
+};
+
 export const fetchProductsByCategoryId = categoryId => (dispatch, getState) => {
   if (shouldFetch(getState())) {
     dispatch(requestProducts(categoryId));

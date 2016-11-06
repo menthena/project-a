@@ -8,5 +8,6 @@ export default keymirror({
   RECEIVE_PRODUCTS: null,
   REQUEST_PRODUCTS: null,
   SELECT_CATEGORY: null,
-  SELECT_PRODUCT: null
+  SELECT_PRODUCT: null,
+  FILTER_PRODUCTS: null
 });
