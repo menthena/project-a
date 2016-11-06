@@ -7,6 +7,7 @@ const MainContainer = ({ params }) => {
   return (
     <div>
       <CategoryContainer />
+      <ProductContainer />
     </div>
   );
 }

@@ -25,11 +25,11 @@ beforeEach(() => {
   });
 });
 
-test('Should have a CategoryList', () => {
+test('Should have a CategoryList that has one element', () => {
   const wrapper = mount(
     <Provider store={store}>
       <CategoryContainer />
     </Provider>
   );
-  expect(wrapper.find('CategoryContainer').length).toBe(1);
+  expect(wrapper.find('a').length).toBe(1);
 });
