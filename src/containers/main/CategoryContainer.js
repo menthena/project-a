@@ -11,7 +11,7 @@ class CategoryContainer extends React.Component {
 
   render() {
     return (
-      <div className={styles.content}>
+      <div className="category-content">
         <CategoryList
           items={this.props.categories}
           itemName={'categoryName'}

@@ -16,11 +16,13 @@ test('Should take only the last filter events and should not stop listening', ()
 });
 
 test('Should fetch data and once it is resolved, it should call receive products', () => {
-  generator = filterProducts({ categoryId: 1 });
+  generator = filterProducts({ categoryId: 1, query: 'computer' });
   next = generator.next();
   expect(next.value).toEqual(call(delay, 200));
   next = generator.next();
-  expect(next.value).toEqual(call(fetch, 'http://localhost:3000/products?categoryId=1'));
+  expect(next.value).toEqual(call(fetch,
+    'http://localhost:3000/products?categoryId=1&productName_like=computer')
+  );
   next = generator.next();
   expect(next.value).toEqual(put(productActions.receiveProducts(1, undefined)));
 });

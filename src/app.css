@@ -1,0 +1,19 @@
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.grid {
+  display: flex;
+}
+
+.box {
+  margin-top: 20px;
+  li {
+    padding-bottom: 10px;
+  }
+}
