@@ -1,8 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import CategoryContainer from './categoryContainer';
-import ProductContainer from './productContainer';
-import styles from './mainContainer.css';
+import { connect } from 'react-redux';
+import CategoryContainer from './category-container';
+import ProductContainer from './product-container';
 
 const MainContainer = ({ params }) => {
   return (

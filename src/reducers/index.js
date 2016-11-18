@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import categoryReducer from './categoryReducer'
-import productReducer from './productReducer'
+import categoryReducer from './category-reducer'
+import productReducer from './product-reducer'
 import { routerReducer } from 'react-router-redux'
 
 const reducers = combineReducers({

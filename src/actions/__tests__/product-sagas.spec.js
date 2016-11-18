@@ -1,9 +1,9 @@
 import React from 'react';
-import { watchFilterProducts, filterProducts } from '../productSagas';
+import { watchFilterProducts, filterProducts } from '../product-sagas';
 import { delay } from 'redux-saga';
 import { take, call, put } from 'redux-saga/effects';
 import actions from '../index';
-import * as productActions from '../productActions';
+import * as productActions from '../product-actions';
 
 
 let generator, next;

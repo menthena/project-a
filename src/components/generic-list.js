@@ -1,7 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router';
-import ListItem from './ListItem';
-import ProductListItem from './ProductListItem';
+import { Link } from 'react-router';
+import ListItem from './list-item';
+import ProductListItem from './product-list-item';
 
 const GenericList = ComposedItem => class extends React.Component {
   constructor() {

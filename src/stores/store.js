@@ -5,7 +5,7 @@ import createSagaMiddleware from 'redux-saga';
 import thunk from 'redux-thunk';
 import throttle from 'redux-throttle';
 import reducers from '../reducers/index';
-import { watchFilterProducts } from '../actions/productSagas';
+import { watchFilterProducts } from '../actions/product-sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 const defaultThrottleOption = { // https://lodash.com/docs#throttle

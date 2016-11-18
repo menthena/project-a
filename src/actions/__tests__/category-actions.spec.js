@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme';
-import * as categoryActions from '../categoryActions';
+import * as categoryActions from '../category-actions';
 import actions from '../index';
 import configureMockStore from 'redux-mock-store'
 import nock from 'nock'

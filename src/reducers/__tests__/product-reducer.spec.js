@@ -1,4 +1,4 @@
-import productReducer from '../productReducer';
+import productReducer from '../product-reducer';
 
 test('Initial State', () => {
   const state = productReducer(undefined, {});

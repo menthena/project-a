@@ -2,7 +2,7 @@ import { shallow, mount } from 'enzyme';
 import React from 'react';
 import sinon from 'sinon';
 
-import ListItem from '../listItem';
+import ListItem from '../list-item';
 
 let spy, item;
 

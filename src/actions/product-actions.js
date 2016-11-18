@@ -1,4 +1,4 @@
-import 'isomorphic-fetch'
+import 'isomorphic-fetch';
 import actions from './index';
 
 export const requestProducts = categoryId => ({

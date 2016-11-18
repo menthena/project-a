@@ -2,7 +2,7 @@ import { takeLatest, delay } from 'redux-saga';
 import { fork, call, put, wait } from 'redux-saga/effects';
 import 'isomorphic-fetch';
 import actions from './index';
-import * as productActions from './productActions';
+import * as productActions from './product-actions';
 
 export function* filterProducts(payload) {
   try {

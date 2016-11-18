@@ -1,6 +1,6 @@
 import 'isomorphic-fetch'
 import actions from './index';
-import {fetchProductsByCategoryId} from './productActions';
+import { fetchProductsByCategoryId } from './product-actions';
 
 export const requestCategories = query => ({
   type: actions.REQUEST_CATEGORIES,

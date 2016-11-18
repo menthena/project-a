@@ -1,12 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import styles from './productContainer.css';
-import appStyles from '../../app.css';
 import Query from '../../components/query';
 import Filter from '../../components/filter';
-import { ProductList } from '../../components/genericList';
-import { selectProduct, filterProducts } from '../../actions/productActions';
-import { fetchCategories } from '../../actions/productActions';
+import './product-container.css';
+import { ProductList } from '../../components/generic-list';
+import { selectProduct, filterProducts } from '../../actions/product-actions';
+import { fetchCategories } from '../../actions/product-actions';
 
 class ProductContainer extends React.Component {
   render() {

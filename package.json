@@ -25,7 +25,7 @@
   "jest": {
     "verbose": true,
     "moduleNameMapper": {
-      ".*\\.css": "<rootDir>/src/utils/styleMock.js"
+      ".*\\.css": "<rootDir>/src/utils/style-mock.js"
     }
   },
   "author": "Ahmet Atasoy",

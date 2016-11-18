@@ -11,7 +11,7 @@ const storeFake = (state) => ({
   getState: () => ({ ...state })
 });
 
-import CategoryContainer from '../categoryContainer';
+import CategoryContainer from '../category-container';
 
 beforeEach(() => {
   store = storeFake({

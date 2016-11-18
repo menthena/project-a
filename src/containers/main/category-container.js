@@ -1,8 +1,8 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import styles from './categoryContainer.css';
-import {ProductList, CategoryList} from '../../components/genericList';
-import {selectCategory, fetchCategories} from '../../actions/categoryActions';
+import { connect } from 'react-redux';
+import './category-container.css';
+import { ProductList, CategoryList } from '../../components/generic-list';
+import { selectCategory, fetchCategories } from '../../actions/category-actions';
 
 class CategoryContainer extends React.Component {
   componentDidMount() {

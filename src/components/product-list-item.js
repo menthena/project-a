@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 
 const ProductListItem = ({ handleOnClick, itemName, price, isSelected }) => {
   const styles = {fontWeight: (isSelected) ? 'bold': 'normal'};

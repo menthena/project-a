@@ -1,7 +1,7 @@
 import { shallow, mount } from 'enzyme';
 import React from 'react';
 
-import {ProductList, CategoryList} from '../genericList';
+import { ProductList, CategoryList } from '../generic-list';
 const categories = [{
   categoryId: 1,
   categoryName: 'Category 1'

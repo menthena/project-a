@@ -1,4 +1,4 @@
-import categoryReducer from '../categoryReducer';
+import categoryReducer from '../category-reducer';
 
 test('Initial State', () => {
   const state = categoryReducer(undefined, {});

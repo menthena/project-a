@@ -2,7 +2,7 @@ import { shallow, mount } from 'enzyme';
 import React from 'react';
 import sinon from 'sinon';
 
-import ProductListItem from '../productListItem';
+import ProductListItem from '../product-list-item';
 
 const product = {
   itemName: 'List item name',
