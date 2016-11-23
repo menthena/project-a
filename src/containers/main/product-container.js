@@ -23,6 +23,7 @@ class ProductContainer extends React.Component {
         />
         <ProductList
           items={this.props.products}
+          thumbnailURL={''}
           itemName={'productName'}
           dispatchEvent={this.props.selectProduct}
           selectedItem={this.props.selectedProduct}

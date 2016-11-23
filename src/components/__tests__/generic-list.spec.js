@@ -1,26 +1,12 @@
 import { shallow, mount } from 'enzyme';
 import React from 'react';
+import { SINGLE_PRODUCT_MOCK } from '../../mock/product'
+import { CATEGORIES_MOCK } from '../../mock/category'
 
 import { ProductList, CategoryList } from '../generic-list';
-const categories = [{
-  categoryId: 1,
-  categoryName: 'Category 1'
-},
-{
-  categoryId: 2,
-  categoryName: 'Category 2'
-},
-{
-  categoryId: 3,
-  categoryName: 'Category 3'
-}];
 
-const products = [{
-  productId: 1,
-  categoryId: 2,
-  productName: 'Product 1',
-  price: '£123'
-}];
+const categories = CATEGORIES_MOCK;
+const products = [SINGLE_PRODUCT_MOCK];
 
 test('When CategoryList have no items passed, it should not fail', () => {
   const wrapper = shallow(<CategoryList items={[]} itemName='categoryName' />);

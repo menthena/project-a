@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { mount, shallow } from 'enzyme';
 import 'ignore-styles';
+import { SINGLE_PRODUCT_MOCK } from '../../../mock/product';
 
 let store;
 let wrapper;
@@ -25,11 +26,7 @@ const render = () => {
 beforeEach(() => {
   store = storeFake({
     productReducer: {
-      products: [{
-        productId: 1,
-        productName: 'A',
-        price: '£13'
-      }],
+      products: [SINGLE_PRODUCT_MOCK],
     },
     categoryReducer: {
       selectedCategory: {}

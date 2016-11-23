@@ -1,13 +1,13 @@
 import { shallow, mount } from 'enzyme';
 import React from 'react';
 import sinon from 'sinon';
+import { SINGLE_PRODUCT_MOCK } from '../../mock/product';
 
 import ProductListItem from '../product-list-item';
 
-const product = {
-  itemName: 'List item name',
-  price: '£123'
-};
+let product = SINGLE_PRODUCT_MOCK;
+product.itemName = product['productName'];
+
 const spy = sinon.spy();
 
 test('Should render the list item name', () => {
@@ -18,7 +18,7 @@ test('Should render the list item name', () => {
       handleOnClick={() => {}} />
     );
 
-  expect(wrapper.text()).toEqual('List item name');
+  expect(wrapper.text()).toEqual('Product 1');
 });
 
 test('Should bind an onclick event to the list item and execute it on click', () => {

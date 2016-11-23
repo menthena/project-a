@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from './app';
-import MainContainer from './containers/main/MainContainer';
+import MainContainer from './containers/main/main-container';
 
 
 export default (

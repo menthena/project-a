@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { mount, shallow } from 'enzyme';
 import 'ignore-styles';
+import { SINGLE_CATEGORY_MOCK } from '../../../mock/category';
 
 let store;
 const storeFake = (state) => ({
@@ -16,10 +17,7 @@ import CategoryContainer from '../category-container';
 beforeEach(() => {
   store = storeFake({
     categoryReducer: {
-      categories: [{
-        categoryId: 1,
-        categoryName: 'A'
-      }]
+      categories: [SINGLE_CATEGORY_MOCK]
     },
     productReducer: {}
   });
