@@ -1,3 +1,13 @@
 .product-content {
   flex: 3;
+
+  .thumbnail {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+  }
+
+  .product-name, .product-price {
+    display: inline-block;
+  }
 }

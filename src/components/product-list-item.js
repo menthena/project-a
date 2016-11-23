@@ -13,8 +13,8 @@ const ProductListItem = ({
   return (
     <Link onClick={ handleOnClick } style={styles}>
       <Thumbnail thumbnailURL={thumbnailURL} />
-      {itemName}
-      <span>{price}</span>
+      <div className="product-name">{itemName}</div>
+      <div className="product-price">{price}</div>
     </Link>
   );
 };
