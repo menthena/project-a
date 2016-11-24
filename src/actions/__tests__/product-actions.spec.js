@@ -39,7 +39,6 @@ test('Should not dispatch any actions while there is a fetch in progress', () =>
 });
 
 test('Should make an API call on fetchProducts', (done) => {
-  let categoryId;
   nock.cleanAll();
   nock('http://localhost:3000')
       .get('/products?categoryId=1')
@@ -55,7 +54,7 @@ test('Should make an API call on fetchProducts', (done) => {
     .then(() => {
       expect(store.getActions()).toEqual(expectedActions)
       done();
-    })
+    });
 });
 
 test('Should fetch when there is no state', () => {
@@ -72,10 +71,29 @@ test('Should fetch when isFetching is false', () => {
   expect(result).toBe(true);
 });
 
-test('Should fetch when isFetching is false', () => {
+test('Should not fetch when isFetching is true', () => {
   const result = productActions.shouldFetch({ productReducer: {
     isFetching: true
   }})
 
   expect(result).toBe(false);
+});
+
+test('Should make an API call on fetchProduct', (done) => {
+  nock.cleanAll();
+  nock('http://localhost:3000')
+      .get('/products?productId=1')
+      .reply(200, [{ productId: 1 }])
+
+  const expectedActions = [
+      { type: actions.REQUEST_PRODUCT, productId: 1},
+      { type: actions.RECEIVE_PRODUCT, products: [{productId: 1}], productId: 1 }
+    ];
+
+  const store = mockStore({ products: [] })
+  return store.dispatch(productActions.fetchProduct(1))
+    .then(() => {
+      expect(store.getActions()).toEqual(expectedActions)
+      done();
+    });
 });

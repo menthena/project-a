@@ -13,12 +13,12 @@ const storeFake = (state) => ({
   getState: () => ({ ...state })
 });
 
-import ProductContainer from '../product-container';
+import ProductListContainer from '../product-list-container';
 
 const render = () => {
   wrapper = mount(
     <Provider store={store}>
-      <ProductContainer />
+      <ProductListContainer />
     </Provider>
   )
 };
@@ -27,7 +27,6 @@ beforeEach(() => {
   store = storeFake({
     productReducer: {
       products: [SINGLE_PRODUCT_MOCK],
-      selectedProduct: [SINGLE_PRODUCT_MOCK]
     },
     categoryReducer: {
       selectedCategory: {}
@@ -36,6 +35,10 @@ beforeEach(() => {
   render();
 });
 
-test('Should have a header', () => {
-  expect(wrapper.find('header').length).toBe(1);
+test('Should have a ProductList that has one element', () => {
+  expect(wrapper.find('a').length).toBe(1);
+});
+
+test('Should have Filter', () => {
+  expect(wrapper.find('input').prop('type')).toBe('text');
 });

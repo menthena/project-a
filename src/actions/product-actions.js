@@ -12,10 +12,24 @@ export const receiveProducts = (categoryId, json) => ({
   categoryId
 });
 
-export const selectProduct = (product) => ({
-  type: actions.SELECT_PRODUCT,
-  product
+export const requestProduct = productId => ({
+  type: actions.REQUEST_PRODUCT,
+  productId
 });
+
+export const receiveProduct = (productId, json) => ({
+  type: actions.RECEIVE_PRODUCT,
+  products: json,
+  productId
+});
+
+export const selectProduct = product => dispatch => {
+  dispatch(fetchProduct(product.productId));
+  dispatch({
+    type: actions.SELECT_PRODUCT,
+    product
+  });
+};
 
 export const shouldFetch = (state) => {
   if (state && state.productReducer) {
@@ -39,5 +53,14 @@ export const fetchProductsByCategoryId = categoryId => (dispatch, getState) => {
     return fetch('http://localhost:3000/products?categoryId=' + categoryId)
       .then(response => response.json())
       .then(json => dispatch(receiveProducts(categoryId, json)));
+  }
+};
+
+export const fetchProduct = productId => (dispatch, getState) => {
+  if (shouldFetch(getState())) {
+    dispatch(requestProduct(productId));
+    return fetch('http://localhost:3000/products?productId=' + productId)
+      .then(response => response.json())
+      .then(json => dispatch(receiveProduct(productId, json)));
   }
 };
