@@ -1,3 +1,7 @@
 .grid {
   display: flex;
+  li {
+    border-bottom: 1px #ececec solid;
+    line-height: 24px;
+  }
 }

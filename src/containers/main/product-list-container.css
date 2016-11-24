@@ -10,4 +10,10 @@
   .product-name, .product-price {
     display: inline-block;
   }
+
+  label {
+    color: #999;
+    font-weight: bold;
+    margin-right: 10px;
+  }
 }
