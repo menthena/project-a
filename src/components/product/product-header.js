@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const ProductHeader = ({ productName, price, review }) => {
-  return (
-    <div>
-      <h1>{productName}</h1>
-      <div className="price">{price}</div>
-      <div className="review">{review} stars</div>
-    </div>
-  );
-};
+const ProductHeader = ({ productName, price, review }) => (
+  <div>
+    <h1>{productName}</h1>
+    <div className="price">{price}</div>
+    <div className="review">{review} stars</div>
+  </div>
+);
 
 ProductHeader.propTypes = {
   productName: React.PropTypes.string.isRequired,

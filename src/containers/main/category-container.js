@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './category-container.css';
+import './styles/category-container.css';
 import { ProductList, CategoryList } from '../../components/generic-list';
 import { selectCategory, fetchCategories } from '../../actions/category-actions';
 

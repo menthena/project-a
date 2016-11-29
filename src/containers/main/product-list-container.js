@@ -1,8 +1,8 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import Query from '../../components/query';
 import Filter from '../../components/filter';
-import './product-list-container.css';
+import './styles/product-list-container.css';
 import { ProductList } from '../../components/generic-list';
 import { selectProduct, filterProducts } from '../../actions/product-actions';
 import { fetchCategories } from '../../actions/product-actions';
