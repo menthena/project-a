@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './styles/category-container.css';
 import { ProductList, CategoryList } from '../../components/generic-list';
+import LoadingIndicator from '../../components/common/loading-indicator';
 import { selectCategory, fetchCategories } from '../../actions/category-actions';
 
 class CategoryContainer extends React.Component {
@@ -10,6 +11,10 @@ class CategoryContainer extends React.Component {
   }
 
   render() {
+    console.log(this.props.isFetching);
+    if (this.props.isFetching) {
+      return <LoadingIndicator />;
+    }
     return (
       <div className="category-content">
         <CategoryList

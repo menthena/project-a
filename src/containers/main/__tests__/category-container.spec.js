@@ -14,20 +14,28 @@ const storeFake = (state) => ({
 
 import CategoryContainer from '../category-container';
 
-beforeEach(() => {
-  store = storeFake({
+const generateStore = ({ isFetching = false } = {}) => (
+  storeFake({
     categoryReducer: {
-      categories: [SINGLE_CATEGORY_MOCK]
+      categories: [SINGLE_CATEGORY_MOCK],
+      isFetching
     },
     productReducer: {}
-  });
+  })
+);
+
+const render = (store) => (
+  mount(<Provider store={store}>
+    <CategoryContainer />
+  </Provider>)
+);
+
+test('Should render the category content', () => {
+  const categoryList = render(generateStore());
+  expect(categoryList.find('.category-content').length).toBe(1);
 });
 
-test('Should have a CategoryList that has one element', () => {
-  const wrapper = mount(
-    <Provider store={store}>
-      <CategoryContainer />
-    </Provider>
-  );
-  expect(wrapper.find('a').length).toBe(1);
+test('Should have a loading indicator when it is loading', () => {
+  const categoryList = render(generateStore({ isFetching: true }));
+  expect(categoryList.find('.spinner').length).toBe(1);
 });
