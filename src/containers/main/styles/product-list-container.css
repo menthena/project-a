@@ -7,13 +7,29 @@
     height: 25px;
     vertical-align: middle;
     img {
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 100%;
     }
   }
 
-  .product-name, .product-price {
-    display: inline-block;
+  li a {
+    display: flex;
+  }
+
+  .thumbnail {
+    width: 30px;
+  }
+
+  .product-name {
+    flex: 5;
+  }
+
+  .product-price {
+    background: #EAEAEA;
+    color: #222;
+    border-radius: 3px;
+    padding: 0 5px;
+    font-weight: bold;
   }
 
   label {

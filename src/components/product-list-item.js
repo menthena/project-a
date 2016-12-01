@@ -14,7 +14,7 @@ const ProductListItem = ({
     <Link onClick={ handleOnClick } style={styles}>
       <Thumbnail thumbnailURL={thumbnailURL} />
       <div className="product-name">{itemName}</div>
-      <div className="product-price">{price}</div>
+      <div className="product-price">£{price}</div>
     </Link>
   );
 };
