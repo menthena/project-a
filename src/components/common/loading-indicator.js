@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/common/loading-indicator.css';
 
 const LoadingIndicator = () => (
   <div className="spinner">

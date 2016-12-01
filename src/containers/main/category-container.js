@@ -11,18 +11,20 @@ class CategoryContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props.isFetching);
+    let result;
     if (this.props.isFetching) {
-      return <LoadingIndicator />;
+      result = <LoadingIndicator />;
+    } else {
+      result = (<CategoryList
+        items={this.props.categories}
+        itemName={'categoryName'}
+        dispatchEvent={this.props.selectCategory}
+        selectedItem={this.props.selectedCategory}
+      />);
     }
     return (
       <div className="category-content">
-        <CategoryList
-          items={this.props.categories}
-          itemName={'categoryName'}
-          dispatchEvent={this.props.selectCategory}
-          selectedItem={this.props.selectedCategory}
-        />
+        {result}
       </div>
     );
   }

@@ -13,20 +13,23 @@
     {
       "productId": 1,
       "categoryId": 1,
-      "productName": "Product name 1",
-      "price": "1.2"
+      "productName": "Macbook Pro",
+      "price": "1.2",
+      "thumbnailURL": "images/laptop-1.jpg"
     },
     {
       "productId": 2,
       "categoryId": 1,
-      "productName": "Product name 2",
-      "price": "4.5"
+      "productName": "Posh screens",
+      "price": "4.5",
+      "thumbnailURL": "images/laptop-2.jpg"
     },
     {
       "productId": 3,
       "categoryId": 2,
-      "productName": "Product name 3",
-      "price": "3.2"
+      "productName": "Coffee machine",
+      "price": "3.2",
+      "thumbnailURL": "images/coffee-machine-1.jpg"
     }
   ]
 }

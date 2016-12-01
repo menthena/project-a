@@ -10,6 +10,7 @@ const app = express();
  *   - index.html
  *
  ************************************************************/
+ app.use('/images', express.static(__dirname + '/src/images'));
 
 // Serve application file depending on environment
 app.get('/app.js', (req, res) => {
@@ -28,6 +29,7 @@ app.get('/style.css', (req, res) => {
     res.redirect('//localhost:9090/build/style.css');
   }
 });
+
 
 // Serve index page
 app.get('*', (req, res) => {

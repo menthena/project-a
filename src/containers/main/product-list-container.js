@@ -6,29 +6,35 @@ import './styles/product-list-container.css';
 import { ProductList } from '../../components/generic-list';
 import { selectProduct, filterProducts } from '../../actions/product-actions';
 import { fetchCategories } from '../../actions/product-actions';
+import LoadingIndicator from '../../components/common/loading-indicator';
 
 class ProductListContainer extends React.Component {
   render() {
-    if (!this.props.selectedCategory) {
-      return (<div></div>);
+    let result;
+    if (this.props.isFetching) {
+      result = (<LoadingIndicator />);
+    } else if (this.props.selectedCategory) {
+      result = (
+        <div>
+          <Filter
+            labelText="Filter:"
+            placeholder="Filter products..."
+            handleOnChange={(query) => {
+              this.props.filterProducts(this.props.selectedCategory.categoryId, query);
+            }}
+            />
+          <ProductList
+            items={this.props.products}
+            thumbnailURL={''}
+            itemName={'productName'}
+            dispatchEvent={this.props.selectProduct}
+            selectedItem={this.props.selectedProduct}
+          />
+        </div>
+      );
     }
     return (
-      <div className="product-content">
-        <Filter
-          labelText="Filter:"
-          placeholder="Filter products..."
-          handleOnChange={(query) => {
-            this.props.filterProducts(this.props.selectedCategory.categoryId, query);
-          }}
-        />
-        <ProductList
-          items={this.props.products}
-          thumbnailURL={''}
-          itemName={'productName'}
-          dispatchEvent={this.props.selectProduct}
-          selectedItem={this.props.selectedProduct}
-        />
-      </div>
+      <div className="product-content">{result}</div>
     );
   }
 }
