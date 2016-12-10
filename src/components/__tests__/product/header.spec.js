@@ -5,13 +5,13 @@ import ProductHeader from '../../product/header';
 
 const render = ({
   productName = 'Product name',
-  price = '£13',
-  review = 5
+  price = '13',
+  stars = 5
 } = {}) => {
   const props = {
     productName,
     price,
-    review
+    stars
   };
   return shallow(<ProductHeader {...props} />);
 };

@@ -27,7 +27,7 @@ beforeEach(() => {
   store = storeFake({
     productReducer: {
       products: [SINGLE_PRODUCT_MOCK],
-      selectedProduct: [SINGLE_PRODUCT_MOCK]
+      selectedProduct: SINGLE_PRODUCT_MOCK
     },
     categoryReducer: {
       selectedCategory: {}
@@ -37,5 +37,5 @@ beforeEach(() => {
 });
 
 test('Should have a header', () => {
-  expect(wrapper.find('header').length).toBe(1);
+  expect(wrapper.find('ProductHeader').length).toBe(1);
 });
