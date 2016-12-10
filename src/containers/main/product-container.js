@@ -1,14 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import LoadingIndicator from '../../components/common/loading-indicator';
+import ProductHeader from '../../components/product/header';
 
 const ProductContainer = ({ selectedProduct, isProductFetching }) => {
   return (
     <div className="product-content">
       { selectedProduct && (
-        <header>
-          {selectedProduct.productName}
-        </header>
+        <ProductHeader {...selectedProduct} />
       )}
     </div>
   );

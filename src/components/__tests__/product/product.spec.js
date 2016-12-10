@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import ProductHeader from '../../product/product-header';
+import ProductHeader from '../../product/header';
 
 const render = ({
   productName = 'Product name',
