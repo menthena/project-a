@@ -11,7 +11,7 @@ import LoadingIndicator from '../../components/common/loading-indicator';
 class ProductListContainer extends React.Component {
   render() {
     return (
-      <div className="product-content">
+      <div className="product-list-content">
         { this.props.isFetching && <LoadingIndicator /> }
         { this.props.selectedCategory && (
           <div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ProductHeader from '../../components/product/header';
+import './styles/product-container.css';
 
 const ProductContainer = ({ selectedProduct, isProductFetching }) => {
   return (

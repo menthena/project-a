@@ -1,0 +1,12 @@
+.product-content {
+  flex: 3;
+  h1 {
+    font-size: 18px;
+  }
+  .price {
+    float: left;
+  }
+  .review {
+    float: right;
+  }
+}
