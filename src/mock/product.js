@@ -3,5 +3,6 @@ export const SINGLE_PRODUCT_MOCK = {
   categoryId: 2,
   productName: 'Product 1',
   thumbnailURL: 'http://',
-  price: '£123'
+  price: '123',
+  stars: 1
 };

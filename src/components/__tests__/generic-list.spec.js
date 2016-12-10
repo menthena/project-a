@@ -36,5 +36,5 @@ test('ProductList should contain price', () => {
       itemName='productName'
       {...products[0]} />);
 
-  expect(wrapper.find('span').text()).toEqual('£123');
+  expect(wrapper.find('.product-price').text()).toEqual('£123');
 });

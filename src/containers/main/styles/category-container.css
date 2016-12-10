@@ -1,3 +1,7 @@
 .category-content {
+  position: relative;
   flex: 1;
+  a {
+    display: block;
+  }
 }

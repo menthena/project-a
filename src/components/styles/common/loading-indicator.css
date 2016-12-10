@@ -1,7 +1,11 @@
 .spinner {
+  position: absolute;
+  border-radius: 4px;
   width: 40px;
   text-align: center;
-  margin: auto;
+  left: 50%;
+  margin-left: -10px;
+  top: 50%;
   &.mini {
     margin: 0;
     width: 42px;

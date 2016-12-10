@@ -10,31 +10,28 @@ import LoadingIndicator from '../../components/common/loading-indicator';
 
 class ProductListContainer extends React.Component {
   render() {
-    let result;
-    if (this.props.isFetching) {
-      result = (<LoadingIndicator />);
-    } else if (this.props.selectedCategory) {
-      result = (
-        <div>
-          <Filter
-            labelText="Filter:"
-            placeholder="Filter products..."
-            handleOnChange={(query) => {
-              this.props.filterProducts(this.props.selectedCategory.categoryId, query);
-            }}
-            />
-          <ProductList
-            items={this.props.products}
-            thumbnailURL={''}
-            itemName={'productName'}
-            dispatchEvent={this.props.selectProduct}
-            selectedItem={this.props.selectedProduct}
-          />
-        </div>
-      );
-    }
     return (
-      <div className="product-content">{result}</div>
+      <div className="product-content">
+        { this.props.isFetching && <LoadingIndicator /> }
+        { this.props.selectedCategory && (
+          <div>
+            <Filter
+              labelText="Filter:"
+              placeholder="Filter products..."
+              handleOnChange={(query) => {
+                this.props.filterProducts(this.props.selectedCategory.categoryId, query);
+              }}
+              />
+            <ProductList
+              items={this.props.products}
+              thumbnailURL={''}
+              itemName={'productName'}
+              dispatchEvent={this.props.selectProduct}
+              selectedItem={this.props.selectedProduct}
+            />
+          </div>
+        )}
+      </div>
     );
   }
 }

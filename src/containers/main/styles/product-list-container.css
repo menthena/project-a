@@ -1,10 +1,23 @@
 .product-content {
+  margin: 0 10px;
+  position: relative;
   flex: 3;
 
+  ul {
+    margin-top: 15px;
+  }
+
+  div {
+    line-height: 19px;
+  }
+
+  .filter {
+    margin-top: 5px;
+  }
+
   .thumbnail {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 35px;
     vertical-align: middle;
     img {
       width: auto;
@@ -16,20 +29,18 @@
     display: flex;
   }
 
-  .thumbnail {
-    width: 30px;
+  .product-stars {
+    flex: 1;
   }
 
-  .product-name {
+  .product-info {
     flex: 5;
   }
 
   .product-price {
-    background: #EAEAEA;
-    color: #222;
-    border-radius: 3px;
-    padding: 0 5px;
-    font-weight: bold;
+    color: #666;
+    display: inline-block;
+    font-size: 12px;
   }
 
   label {

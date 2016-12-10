@@ -15,21 +15,24 @@
       "categoryId": 1,
       "productName": "Macbook Pro",
       "price": "1.2",
-      "thumbnailURL": "images/laptop-1.jpg"
+      "thumbnailURL": "images/laptop-1.jpg",
+      "stars": 4
     },
     {
       "productId": 2,
       "categoryId": 1,
       "productName": "Screen",
       "price": "4.5",
-      "thumbnailURL": "images/laptop-2.jpg"
+      "thumbnailURL": "images/laptop-2.jpg",
+      "stars": 3
     },
     {
       "productId": 3,
       "categoryId": 2,
       "productName": "Coffee machine",
       "price": "3.2",
-      "thumbnailURL": "images/coffee-machine-1.jpg"
+      "thumbnailURL": "images/coffee-machine-1.jpg",
+      "stars": 5
     }
   ]
 }

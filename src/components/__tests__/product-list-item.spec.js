@@ -18,7 +18,7 @@ test('Should render the list item name', () => {
       handleOnClick={() => {}} />
     );
 
-  expect(wrapper.text()).toEqual('Product 1');
+  expect(wrapper.find('.product-name').text()).toEqual('Product 1');
 });
 
 test('Should bind an onclick event to the list item and execute it on click', () => {
@@ -40,5 +40,5 @@ test('Should contain the price', () => {
       handleOnClick={spy} />
     );
 
-  expect(wrapper.find('span').text()).toEqual('£123');
+  expect(wrapper.find('.product-price').text()).toEqual('£123');
 });

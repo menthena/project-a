@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Filter = ({ labelText, placeholder, handleOnChange, value }) => (
-  <div>
+  <div className="filter">
     <label>{labelText}</label>
     <input
       type="text"
