@@ -13,7 +13,11 @@
 
   .filter, .sorter {
     margin-top: 5px;
-    flex: 5;
+    flex: 6;
+  }
+
+  .sorter {
+    flex: 4;
   }
 
   .thumbnail {

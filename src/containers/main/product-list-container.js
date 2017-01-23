@@ -20,11 +20,13 @@ class ProductListContainer extends React.Component {
               <Filter
                 labelText="Filter:"
                 placeholder="Filter products..."
-                handleOnChange={(query) => {
+                handleOnChange={query => {
                   this.props.filterProducts(this.props.selectedCategory.categoryId, query);
                 }}
                 />
-              <Sorter />
+              <Sorter handleOnChange={sortIndex => {
+                this.props.sortProducts(sortIndex);
+              }} />
             </div>
             <ProductList
               items={this.props.products}

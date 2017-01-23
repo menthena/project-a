@@ -48,5 +48,5 @@ test('renders a Sorter component', () => {
 });
 
 test('wraps filter and sorter with flex', () => {
-
+  expect(wrapper.find('.flex').length).toBe(1);
 });
