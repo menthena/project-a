@@ -18,7 +18,7 @@ const sorterOptions = [{
 }];
 
 const Sorter = ({ handleOnChange }) => (
-  <select onChange={handleOnChange}>
+  <select className="sorter" onChange={handleOnChange}>
     { sorterOptions.map((option) => {
         return (
           <option key={option.id} value={option.id}>

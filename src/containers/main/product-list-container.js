@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Query from '../../components/query';
 import Filter from '../../components/filter';
+import Sorter from '../../components/sorter';
 import './styles/product-list-container.css';
 import { ProductList } from '../../components/generic-list';
 import { selectProduct, filterProducts } from '../../actions/product-actions';
@@ -15,13 +16,16 @@ class ProductListContainer extends React.Component {
         { this.props.isFetching && <LoadingIndicator /> }
         { this.props.selectedCategory && (
           <div>
-            <Filter
-              labelText="Filter:"
-              placeholder="Filter products..."
-              handleOnChange={(query) => {
-                this.props.filterProducts(this.props.selectedCategory.categoryId, query);
-              }}
-              />
+            <div className="flex">
+              <Filter
+                labelText="Filter:"
+                placeholder="Filter products..."
+                handleOnChange={(query) => {
+                  this.props.filterProducts(this.props.selectedCategory.categoryId, query);
+                }}
+                />
+              <Sorter />
+            </div>
             <ProductList
               items={this.props.products}
               thumbnailURL={''}

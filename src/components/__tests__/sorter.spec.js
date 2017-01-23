@@ -9,9 +9,9 @@ const render = () => {
   return shallow(<Sorter handleOnChange={spy} />)
 };
 
-test('renders a selectbox', () => {
+test('renders a flex selectbox', () => {
   const sorter = render();
-  expect(sorter.is('select')).toBe(true);
+  expect(sorter.is('select.sorter')).toBe(true);
 });
 
 test('renders a list of sorting options', () => {

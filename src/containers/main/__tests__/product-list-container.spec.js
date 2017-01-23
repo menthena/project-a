@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import 'ignore-styles';
 import { SINGLE_PRODUCT_MOCK } from '../../../mock/product';
 
@@ -35,10 +35,18 @@ beforeEach(() => {
   render();
 });
 
-test('Should have a ProductList that has one element', () => {
-  expect(wrapper.find('a').length).toBe(1);
+test('renders a ProductListItem component through ProductList', () => {
+  expect(wrapper.find('ProductListItem').length).toBe(1);
 });
 
-test('Should have Filter', () => {
-  expect(wrapper.find('input').prop('type')).toBe('text');
+test('renders a Filter component', () => {
+  expect(wrapper.find('Filter').length).toBe(1);
+});
+
+test('renders a Sorter component', () => {
+  expect(wrapper.find('Sorter').length).toBe(1);
+});
+
+test('wraps filter and sorter with flex', () => {
+
 });
