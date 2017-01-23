@@ -52,7 +52,8 @@ a {
   cursor: pointer;
 }
 
-input {
+input, select {
+  background: #FFF;
   border-radius: 2px;
   border: 1px #CCC solid;
   line-height: 21px;

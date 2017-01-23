@@ -11,12 +11,8 @@
     line-height: 19px;
   }
 
-  .filter {
+  .filter, .sorter {
     margin-top: 5px;
-    flex: 5;
-  }
-
-  .sorter {
     flex: 5;
   }
 
