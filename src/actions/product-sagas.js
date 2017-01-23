@@ -18,6 +18,24 @@ export function* filterProducts(payload) {
     yield put(productActions.unableReceivingProducts());
   }
 }
+export function* sortProducts(payload) {
+  try {
+    yield call(delay, 200);
+    let response = yield call(fetch,
+      'http://localhost:3000/products?categoryId=' + payload.categoryId +
+      '&sort=' + payload.sortIndex);
+    if (response) {
+      response = yield response.json();
+    }
+    yield put(productActions.receiveProducts(payload.categoryId, response));
+  } catch (e) {
+    yield put(productActions.unableReceivingProducts());
+  }
+}
+
+export function* watchSortProducts() {
+  yield* takeLatest(actions.SORT_PRODUCTS, sortProducts);
+}
 
 export function* watchFilterProducts() {
   yield* takeLatest(actions.FILTER_PRODUCTS, filterProducts);

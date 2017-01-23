@@ -47,6 +47,14 @@ export const filterProducts = (categoryId, query) => {
   };
 };
 
+export const sortProducts = (categoryId, sortIndex) => {
+  return {
+    type: actions.SORT_PRODUCTS,
+    categoryId,
+    sortIndex
+  };
+};
+
 export const fetchProductsByCategoryId = categoryId => (dispatch, getState) => {
   if (shouldFetch(getState())) {
     dispatch(requestProducts(categoryId));

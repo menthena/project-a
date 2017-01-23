@@ -5,7 +5,7 @@ import createSagaMiddleware from 'redux-saga';
 import thunk from 'redux-thunk';
 import throttle from 'redux-throttle';
 import reducers from '../reducers/index';
-import { watchFilterProducts } from '../actions/product-sagas';
+import { watchFilterProducts, watchSortProducts } from '../actions/product-sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 const defaultThrottleOption = { // https://lodash.com/docs#throttle
@@ -23,7 +23,8 @@ const store = createStore(
 
 function* rootSaga() {
     yield [
-      fork(watchFilterProducts)
+      fork(watchFilterProducts),
+      fork(watchSortProducts)
     ]
 }
 

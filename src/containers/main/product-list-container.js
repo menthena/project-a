@@ -5,7 +5,7 @@ import Filter from '../../components/filter';
 import Sorter from '../../components/sorter';
 import './styles/product-list-container.css';
 import { ProductList } from '../../components/generic-list';
-import { selectProduct, filterProducts } from '../../actions/product-actions';
+import { selectProduct, filterProducts, sortProducts } from '../../actions/product-actions';
 import { fetchCategories } from '../../actions/product-actions';
 import LoadingIndicator from '../../components/common/loading-indicator';
 
@@ -25,7 +25,8 @@ class ProductListContainer extends React.Component {
                 }}
                 />
               <Sorter handleOnChange={sortIndex => {
-                this.props.sortProducts(sortIndex);
+                console.log(arguments);
+                this.props.sortProducts(this.props.selectedCategory.categoryId, sortIndex);
               }} />
             </div>
             <ProductList
@@ -54,7 +55,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     selectProduct: (item) => dispatch(selectProduct(item)),
-    filterProducts: (categoryId, query) => dispatch(filterProducts(categoryId, query))
+    filterProducts: (categoryId, query) => dispatch(filterProducts(categoryId, query)),
+    sortProducts: (categoryId, sortIndex) => dispatch(sortProducts(categoryId, sortIndex))
   };
 };
 

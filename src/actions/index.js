@@ -12,5 +12,6 @@ export default keymirror({
   FILTER_PRODUCTS: null,
   REQUEST_PRODUCT: null,
   FETCH_PRODUCT: null,
-  RECEIVE_PRODUCT: null
+  RECEIVE_PRODUCT: null,
+  SORT_PRODUCTS: null
 });

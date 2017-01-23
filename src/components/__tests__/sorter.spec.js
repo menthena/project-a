@@ -28,6 +28,6 @@ test('displays the text and passes the id of the option', () => {
 
 test('calls on change handler', () => {
   const sorter = render();
-  sorter.simulate('change');
+  sorter.simulate('change', { target: { value: '1'} });
   expect(spy.called).toBe(true);
 });
