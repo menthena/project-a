@@ -4,6 +4,22 @@ import 'isomorphic-fetch';
 import actions from './index';
 import * as productActions from './product-actions';
 
+const buildSortQueryString = (sortIndex) => {
+  switch (sortIndex) {
+    case 'reviewcount':
+      return '&_sort=review&_order=DESC';
+      break;
+    case 'lowprice':
+      return '&_sort=price&_order=ASC';
+      break;
+    case 'highprice':
+      return '&_sort=price&_order=DESC';
+      break;
+    default:
+      return '&_sort=stars&_order=DESC';
+  }
+}
+
 export function* filterProducts(payload) {
   try {
     yield call(delay, 200);
@@ -23,7 +39,7 @@ export function* sortProducts(payload) {
     yield call(delay, 200);
     let response = yield call(fetch,
       'http://localhost:3000/products?categoryId=' + payload.categoryId +
-      '&sort=' + payload.sortIndex);
+      '' + buildSortQueryString(payload.sortIndex));
     if (response) {
       response = yield response.json();
     }

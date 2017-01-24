@@ -28,12 +28,12 @@ test('Should fetch data and once it is resolved, it should call receive products
 });
 
 test('makes a call to API to sort the items, updates the product reducer', () => {
-  generator = sortProducts({ categoryId: 1, sortIndex: 'desc' });
+  generator = sortProducts({ categoryId: 1, sortIndex: 'reviews' });
   next = generator.next();
   expect(next.value).toEqual(call(delay, 200));
   next = generator.next();
   expect(next.value).toEqual(call(fetch,
-    'http://localhost:3000/products?categoryId=1&sort=desc')
+    'http://localhost:3000/products?categoryId=1&_sort=stars&_order=DESC')
   );
   next = generator.next();
   expect(next.value).toEqual(put(productActions.receiveProducts(1, undefined)));
