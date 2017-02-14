@@ -2,7 +2,8 @@ import actions from '../actions/index';
 
 let initialState = {
   products: [],
-  isFetching: false
+  isFetching: false,
+  sortBy: 'review'
 };
 
 const productReducer = (state = initialState, action) => {
@@ -17,6 +18,11 @@ const productReducer = (state = initialState, action) => {
         ...state,
         isFetching: false,
         products: action.products
+      };
+    case actions.SORT_PRODUCTS:
+      return {
+        ...state,
+        sortBy: action.sortBy
       };
     case actions.SELECT_PRODUCT:
       return {

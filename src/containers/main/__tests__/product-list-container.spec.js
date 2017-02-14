@@ -27,6 +27,7 @@ beforeEach(() => {
   store = storeFake({
     productReducer: {
       products: [SINGLE_PRODUCT_MOCK],
+      sortBy: 'reviewcount'
     },
     categoryReducer: {
       selectedCategory: {}

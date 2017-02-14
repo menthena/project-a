@@ -47,11 +47,11 @@ export const filterProducts = (categoryId, query) => {
   };
 };
 
-export const sortProducts = (categoryId, sortIndex) => {
+export const sortProducts = (categoryId, sortBy) => {
   return {
     type: actions.SORT_PRODUCTS,
     categoryId,
-    sortIndex
+    sortBy
   };
 };
 

@@ -18,6 +18,39 @@
 
   .sorter {
     flex: 4;
+    position: relative;
+    font-size: 12px;
+    div {
+      border-radius: 2px;
+      border: 1px #CCC solid;
+      line-height: 21px;
+      padding: 1px 8px;
+    }
+    ul {
+      display: none;
+      margin: 0;
+      background: #FFF;
+      position: absolute;
+      border: 1px #CCC solid;
+      border-top: none;
+      line-height: 21px;
+      width: 100%;
+      li {
+        border-bottom: 0;
+        a {
+          padding: 0 8px;
+          display: block;
+          &:hover {
+            background-color: #ECECEC;
+          }
+        }
+      }
+    }
+    &:hover {
+      ul {
+        display: block;
+      }
+    }
   }
 
   .thumbnail {

@@ -6,28 +6,28 @@ import Sorter from '../sorter';
 let spy;
 const render = () => {
   spy = sinon.spy();
-  return shallow(<Sorter handleOnChange={spy} />)
+  return shallow(<Sorter handleOnChange={spy} sortBy="reviewcount" />)
 };
 
-test('renders a flex selectbox', () => {
+test('renders a flex column', () => {
   const sorter = render();
-  expect(sorter.is('select.sorter')).toBe(true);
+  expect(sorter.is('div.sorter')).toBe(true);
 });
 
 test('renders a list of sorting options', () => {
   const sorter = render();
-  expect(sorter.find('option').length).toEqual(4);
+  expect(sorter.find('ul li').length).toEqual(4);
 });
 
-test('displays the text and passes the id of the option', () => {
+test('renders the selected option`s text', () => {
   const sorter = render();
-  const firstOption = sorter.find('option').first();
-  expect(firstOption.props().value).toEqual('review');
-  expect(firstOption.text()).toEqual('Good reviews');
+  const selectedOption = sorter.find('a').first();
+  expect(selectedOption.text()).toEqual('Good reviews');
 });
 
 test('calls on change handler', () => {
   const sorter = render();
-  sorter.simulate('change', { target: { value: '1'} });
+  const option = sorter.find('li a').first();
+  option.simulate('click');
   expect(spy.called).toBe(true);
 });

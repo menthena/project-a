@@ -17,19 +17,32 @@ const sorterOptions = [{
   text: 'High price'
 }];
 
-const Sorter = ({ handleOnChange }) => (
-  <select className="sorter" onChange={event => handleOnChange(event.target.value)}>
-    { sorterOptions.map((option) => {
-        return (
-          <option key={option.id} value={option.id}>
-            {option.text}
-          </option>)
-    }) }
-  </select>
-);
+const Sorter = ({ handleOnChange, sortBy }) => {
+  const selectedIndex = sorterOptions.findIndex(o => o.id === sortBy);
+  return (
+    <div className="sorter">
+      <div>{sorterOptions[selectedIndex].text}</div>
+      <ul>
+      {
+        sorterOptions.map((option, index) => {
+          return (
+            <li key={option.id}>
+              <a onClick={(() =>
+                handleOnChange(option.id))}>
+                  {option.text}
+              </a>
+            </li>
+          );
+        })
+      }
+      </ul>
+    </div>
+  );
+};
 
 Sorter.propTypes = {
-
+  handleOnChange: React.PropTypes.func.isRequired,
+  sortBy: React.PropTypes.string.isRequired
 };
 
 export default Sorter;

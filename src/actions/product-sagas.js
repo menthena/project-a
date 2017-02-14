@@ -39,7 +39,7 @@ export function* sortProducts(payload) {
     yield call(delay, 200);
     let response = yield call(fetch,
       'http://localhost:3000/products?categoryId=' + payload.categoryId +
-      '' + buildSortQueryString(payload.sortIndex));
+      '' + buildSortQueryString(payload.sortBy));
     if (response) {
       response = yield response.json();
     }

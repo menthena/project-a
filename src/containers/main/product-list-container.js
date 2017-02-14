@@ -12,7 +12,8 @@ import LoadingIndicator from '../../components/common/loading-indicator';
 class ProductListContainer extends React.Component {
   render() {
     const { isFetching, sortProducts, filterProducts, selectedCategory,
-        products, selectedProduct, selectProduct } = this.props;
+        products, selectedProduct, selectProduct, sortBy } = this.props;
+    console.log(sortBy, products, selectedCategory);
     return (
       <div className="product-list-content">
         { isFetching && <LoadingIndicator /> }
@@ -28,7 +29,7 @@ class ProductListContainer extends React.Component {
                 />
               <Sorter handleOnChange={sortIndex => {
                 sortProducts(selectedCategory.categoryId, sortIndex);
-              }} />
+              }} sortBy={sortBy} />
             </div>
             <ProductList
               items={products}
@@ -49,7 +50,8 @@ const mapStateToProps = (state, ownProps) => {
     selectedProduct: state.productReducer.selectedProduct,
     selectedCategory: state.categoryReducer.selectedCategory,
     products: state.productReducer.products,
-    isFetching: state.productReducer.isFetching
+    isFetching: state.productReducer.isFetching,
+    sortBy: state.productReducer.sortBy
   };
 };
 
@@ -57,7 +59,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     selectProduct: (item) => dispatch(selectProduct(item)),
     filterProducts: (categoryId, query) => dispatch(filterProducts(categoryId, query)),
-    sortProducts: (categoryId, sortIndex) => dispatch(sortProducts(categoryId, sortIndex))
+    sortProducts: (categoryId, sortBy) => dispatch(sortProducts(categoryId, sortBy))
   };
 };
 
