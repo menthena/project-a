@@ -55,6 +55,18 @@ export const sortProducts = (categoryId, sortBy) => {
   };
 };
 
+export const hideSortOptions = () => {
+  return {
+    type: actions.HIDE_SORT_OPTIONS
+  };
+};
+
+export const displaySortOptions = () => {
+  return {
+    type: actions.DISPLAY_SORT_OPTIONS
+  };
+};
+
 export const fetchProductsByCategoryId = categoryId => (dispatch, getState) => {
   if (shouldFetch(getState())) {
     dispatch(requestProducts(categoryId));

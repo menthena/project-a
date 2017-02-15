@@ -46,11 +46,6 @@
         }
       }
     }
-    &:hover {
-      ul {
-        display: block;
-      }
-    }
   }
 
   .thumbnail {

@@ -18,6 +18,22 @@ test('Should create an action to request a category', () => {
   expect(productActions.requestProducts()).toEqual(expectedAction);
 });
 
+test('Should create an action to display the sort options', () => {
+  const expectedAction = {
+    type: actions.DISPLAY_SORT_OPTIONS
+  };
+
+  expect(productActions.displaySortOptions()).toEqual(expectedAction);
+});
+
+test('Should create an action to hide the sort options', () => {
+  const expectedAction = {
+    type: actions.HIDE_SORT_OPTIONS
+  };
+
+  expect(productActions.hideSortOptions()).toEqual(expectedAction);
+});
+
 test('Should create an action to receive a category', () => {
   let categoryId;
   let products = [];

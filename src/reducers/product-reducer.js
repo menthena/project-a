@@ -3,7 +3,8 @@ import actions from '../actions/index';
 let initialState = {
   products: [],
   isFetching: false,
-  sortBy: 'review'
+  sortBy: 'review',
+  displaySortOptions: false
 };
 
 const productReducer = (state = initialState, action) => {
@@ -23,6 +24,16 @@ const productReducer = (state = initialState, action) => {
       return {
         ...state,
         sortBy: action.sortBy
+      };
+    case actions.DISPLAY_SORT_OPTIONS:
+      return {
+        ...state,
+        displaySortOptions: true
+      };
+    case actions.HIDE_SORT_OPTIONS:
+      return {
+        ...state,
+        displaySortOptions: false
       };
     case actions.SELECT_PRODUCT:
       return {

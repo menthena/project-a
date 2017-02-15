@@ -45,3 +45,19 @@ test('selects a product', () => {
 
   expect(state.selectedProduct).toEqual(product);
 });
+
+test('displays the sort options', () => {
+  const state = productReducer({}, {
+    type: 'DISPLAY_SORT_OPTIONS'
+  });
+
+  expect(state.displaySortOptions).toBe(true);
+});
+
+test('hides the sort options', () => {
+  const state = productReducer({}, {
+    type: 'HIDE_SORT_OPTIONS'
+  });
+
+  expect(state.displaySortOptions).toBe(false);
+});
